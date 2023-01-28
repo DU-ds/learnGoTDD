@@ -1,9 +1,9 @@
 package arrays
 
-func Sum(numbers [5]int) int {
+func Sum(numbers []int) int {
 	var sum int
-	for i := 0; i < len(numbers); i++ {
-		sum += numbers[i]
+	for _, num := range numbers {
+		sum += num
 	}
 	return sum;
 }
