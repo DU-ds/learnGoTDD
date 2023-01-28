@@ -2,12 +2,15 @@ package iteration
 
 import "testing"
 
-func TestRepeat(t *testing.T) {
-	repeated := Repeat("a")
+func TestRepeat(t *testing.T, n int) {
+	repeated := Repeat("a", n)
 	expected := "aaaaa"
 
 	if repeated != expected {
 		t.Errorf("expected %q but got %q", expected, repeated)
+	}
+	if len(repeated) != len(expected) {
+		t.Errorf(expected)
 	}
 }
 
