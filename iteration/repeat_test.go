@@ -1,9 +1,14 @@
 package iteration
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
-func TestRepeat(t *testing.T, n int) {
-	repeated := Repeat("a", n)
+
+func TestRepeat(t *testing.T) {
+	nn := 5
+	repeated := Repeat("a", nn)
 	expected := "aaaaa"
 
 	if repeated != expected {
@@ -16,6 +21,12 @@ func TestRepeat(t *testing.T, n int) {
 
 func BenchmarkRepeat(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		Repeat("a")
+		Repeat("a", b.N)
 	}
+}
+
+func ExampleRepeat(){
+	repeated := Repeat("abc", 5)
+	fmt.Println(repeated)
+	// Output: "abcabcabcabcabc"
 }
