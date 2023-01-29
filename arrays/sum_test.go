@@ -20,7 +20,7 @@ func TestSumAll(t *testing.T) {
 	arr1 := []int{1,2,3,4,5}
 	arr2 := []int{1,2,3}
 	t.Run("one slice", func(t *testing.T) {
-		got := SumAll(arr1)
+		got := SumAll(arr2)[0]
 		want := 6
 		if !reflect.DeepEqual(got, want) {
 			t.Errorf("got %d want %d", got, want)
