@@ -20,15 +20,15 @@ func TestSumAll(t *testing.T) {
 	arr1 := []int{1,2,3,4,5}
 	arr2 := []int{1,2,3}
 	t.Run("one slice", func(t *testing.T) {
-		got := SumAll(arr2)[0]
-		want := 6
+		got := SumAllTails(arr2)[0]
+		want := 5
 		if !reflect.DeepEqual(got, want) {
 			t.Errorf("got %d want %d", got, want)
 		}
 	})
 	t.Run("two slices", func(t *testing.T){
-		got := SumAll(arr1, arr2)
-		want := []int{15, 6}
+		got := SumAllTails(arr1, arr2)
+		want := []int{14, 5}
 		if !reflect.DeepEqual(got, want) {
 			t.Errorf("got %d want %d", got, want)
 		}
