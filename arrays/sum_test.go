@@ -22,14 +22,14 @@ func TestSumAll(t *testing.T) {
 	t.Run("one slice", func(t *testing.T) {
 		got := SumAll(arr1)
 		want := 6
-		if got != want {
+		if !reflect.DeepEqual(got, want) {
 			t.Errorf("got %d want %d", got, want)
 		}
 	})
 	t.Run("two slices", func(t *testing.T){
 		got := SumAll(arr1, arr2)
 		want := 21
-	if !reflect.DeepEqual(got, want) {
+		if !reflect.DeepEqual(got, want) {
 			t.Errorf("got %d want %d", got, want)
 		}
 	})
